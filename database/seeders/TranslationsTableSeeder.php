@@ -1,9 +1,9 @@
 <?php
 
-namespace Joy\VoyagerBreadReplaceKeyword\Database\Seeders;
+namespace Joy\VoyagerBreadProjectTask\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Joy\VoyagerBreadReplaceKeyword\Models\ReplaceKeyword;
+use Joy\VoyagerBreadProjectTask\Models\ProjectTask;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\MenuItem;
 use TCG\Voyager\Models\Translation;
@@ -18,7 +18,7 @@ class TranslationsTableSeeder extends Seeder
     public function run()
     {
         $this->dataTypesTranslations();
-        $this->replaceKeywordsTranslations();
+        $this->projectTasksTranslations();
         $this->menusTranslations();
     }
 
@@ -27,19 +27,19 @@ class TranslationsTableSeeder extends Seeder
      *
      * @return void
      */
-    private function replaceKeywordsTranslations()
+    private function projectTasksTranslations()
     {
-        // Adding translations for 'replace_keywords'
+        // Adding translations for 'project_tasks'
         //
-        $cat = ReplaceKeyword::where('name', 'replace-keyword-1')->first();
+        $cat = ProjectTask::where('name', 'project-task-1')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['replace_keywords', 'name'], $cat->id), 'replace-keyword-1');
-            $this->trans('pt', $this->arr(['replace_keywords', 'description'], $cat->id), 'ReplaceKeyword 1');
+            $this->trans('pt', $this->arr(['project_tasks', 'name'], $cat->id), 'project-task-1');
+            $this->trans('pt', $this->arr(['project_tasks', 'description'], $cat->id), 'ProjectTask 1');
         }
-        $cat = ReplaceKeyword::where('name', 'replace-keyword-2')->first();
+        $cat = ProjectTask::where('name', 'project-task-2')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['replace_keywords', 'name'], $cat->id), 'replace-keyword-2');
-            $this->trans('pt', $this->arr(['replace_keywords', 'description'], $cat->id), 'ReplaceKeyword 2');
+            $this->trans('pt', $this->arr(['project_tasks', 'name'], $cat->id), 'project-task-2');
+            $this->trans('pt', $this->arr(['project_tasks', 'description'], $cat->id), 'ProjectTask 2');
         }
     }
 
@@ -55,18 +55,18 @@ class TranslationsTableSeeder extends Seeder
         $_fld = 'display_name_singular';
         $_tpl = ['data_types', $_fld];
         
-        $dtp = DataType::where($_fld, __('joy-voyager-bread-replace-keyword::seeders.data_types.category.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('joy-voyager-bread-project-task::seeders.data_types.category.singular'))->firstOrFail();
         if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'ReplaceKeyword');
+            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'ProjectTask');
         }
 
         // Adding translations for 'display_name_plural'
         //
         $_fld = 'display_name_plural';
         $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('joy-voyager-bread-replace-keyword::seeders.data_types.category.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('joy-voyager-bread-project-task::seeders.data_types.category.plural'))->firstOrFail();
         if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'ReplaceKeywords');
+            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'ProjectTasks');
         }
     }
 
@@ -78,9 +78,9 @@ class TranslationsTableSeeder extends Seeder
     private function menusTranslations()
     {
         $_tpl = ['menu_items', 'title'];
-        $_item = $this->findMenuItem(__('joy-voyager-bread-replace-keyword::seeders.menu_items.replace_keywords'));
+        $_item = $this->findMenuItem(__('joy-voyager-bread-project-task::seeders.menu_items.project_tasks'));
         if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'ReplaceKeywords');
+            $this->trans('pt', $this->arr($_tpl, $_item->id), 'ProjectTasks');
         }
     }
 
