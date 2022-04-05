@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'project_tasks',
                 'display_name_singular' => __('joy-voyager-bread-project-task::seeders.data_types.project_task.singular'),
                 'display_name_plural'   => __('joy-voyager-bread-project-task::seeders.data_types.project_task.plural'),
-                'icon'                  => 'voyager-bread',
+                'icon'                  => 'voyager-bread voyager-bread-project-task voyager-star',
                 'model_name'            => 'Joy\\VoyagerBreadProjectTask\\Models\\ProjectTask',
                 // 'policy_name'           => 'Joy\\VoyagerBreadProjectTask\\Policies\\ProjectTaskPolicy',
                 // 'controller'            => 'Joy\\VoyagerBreadProjectTask\\Http\\Controllers\\VoyagerBreadProjectTaskController',
