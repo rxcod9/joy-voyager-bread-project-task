@@ -14,7 +14,7 @@ class DummyProjectTasksTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 100;
+        $count = 20;
         ProjectTask::factory()
             ->count($count)
             ->state(function (array $attributes) use ($count) {
