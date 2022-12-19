@@ -12,7 +12,7 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        $setting = $this->findSetting('project_task.key1');
+        $setting = $this->findSetting('projecttask.key1');
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('joy-voyager-bread-project-task::seeders.settings.project_task.key1'),
@@ -24,7 +24,7 @@ class SettingsTableSeeder extends Seeder
             ])->save();
         }
 
-        $setting = $this->findSetting('project_task.image');
+        $setting = $this->findSetting('projecttask.image');
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('joy-voyager-bread-project-task::seeders.settings.project_task.image'),
